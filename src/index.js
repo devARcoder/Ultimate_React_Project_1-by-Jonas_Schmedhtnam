@@ -1,6 +1,7 @@
-import React, { createElement } from "react";
+import React from "react";
 import ReactDOM from "react-dom/client";
 
+// eslint-disable-next-line
 const pizzaData = [
   {
     name: "Focaccia",
@@ -45,6 +46,7 @@ const pizzaData = [
     soldOut: false,
   },
 ];
+// eslint-disable-next-line
 
 
 function App() {
@@ -71,7 +73,14 @@ function Menu(){
   )
 }
 function Footer(){
-  return <footer>devArcoder | {new Date().toLocaleDateString()} | we are currently open!</footer>
+  const hour = new Date().getHours()
+  const openHour = 12;
+  const closeHour = 22;
+  const isOpen = hour >= openHour && hour <= closeHour;
+  console.log(isOpen)
+
+  // if (hour >= openHour && hour <= closeHour) alert("we are currently Open"); else alert ("sorry we are close");
+  return <footer>devArcoder | {new Date().toLocaleDateString()} | {new Date().toLocaleTimeString()} | we are currently open!</footer>
 }
 
 
