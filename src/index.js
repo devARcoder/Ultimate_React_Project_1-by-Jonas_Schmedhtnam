@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import './index.css'
 
 // eslint-disable-next-line
 const pizzaData = [
@@ -51,7 +52,7 @@ const pizzaData = [
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header/>
       <Menu/>
       <Footer/>
@@ -60,16 +61,21 @@ function App() {
 }
 
 function Header(){
-  return <h1>Fast React Pizza Co.</h1>
+  // const style = {color: 'white', background: 'gray', fontSize: '44px', textTransform: 'uppercase', padding: '10px'}
+  return (
+  <header className="header footer">
+    <h1>Fast React Pizza Co.</h1>
+  </header>
+  )
 }
 function Menu(){
   return (
-    <div>
-      <h1>Our Menu</h1>
+    <main className="menu">
+      <h2>Our Menu</h2>
       <Pizza/>
       <Pizza/>
       <Pizza/>
-    </div>
+    </main>
   )
 }
 function Footer(){
@@ -80,7 +86,9 @@ function Footer(){
   console.log(isOpen)
 
   // if (hour >= openHour && hour <= closeHour) alert("we are currently Open"); else alert ("sorry we are close");
-  return <footer>devArcoder | {new Date().toLocaleDateString()} | {new Date().toLocaleTimeString()} | we are currently open!</footer>
+  return (
+  <footer className="footer">devArcoder | {new Date().toLocaleDateString()} | {new Date().toLocaleTimeString()} | we are currently open!</footer>
+)
 }
 
 
@@ -88,7 +96,7 @@ function Pizza(){
   return(
     <div>
       <img src="pizzas/spinaci.jpg" alt="" />
-      <h1>Pizza</h1>
+      <h3>Pizza</h3>
       <p>tomato and some spices add in this pizza hut.</p>
     </div>
   )
