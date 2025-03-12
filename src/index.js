@@ -107,11 +107,13 @@ function Footer() {
   const isOpen = hour >= openHour && hour <= closeHour;
   return (
     <footer className="footer">
-      {isOpen && (
+      {isOpen ? (
         <div className="order">
           <p>We're open until {closeHour}:00. Come visit us or order</p>
           <button className="btn">Order</button>
         </div>
+      ) : (
+      <p>We're happy to welcome you {closeHour}:00 and {closeHour}:00.</p>
       )}
     </footer>
   );
